@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>发表文章-旅行系统</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">游迹</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class=" collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">首页</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">攻略</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="editor.html">分享</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login1.html">登录</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">关于</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/home/Gird/two.jpg'); background-size: 100% 100%;width: 100%;height: 60%">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading" style="padding-top: 58px;padding-bottom: 100px">
+          <font face="楷体" color="#f0f8ff" style="font-size: 60px;">游迹分享</font>
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <!-- <p>请使用输入以下信息!</p>-->
+      <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+      <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+      <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+      <form action="editor" method="post" name="sentMessage" id="registerForm"  novalidate>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>文章标题</label>
+            <input type="text" name="title" class="form-control" placeholder="文章标题" id="title" required>
+            <div class="invalid-feedback">
+              文章标题不能为空！
+            </div>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>作者</label>
+            <input type="text" name="author" class="form-control" placeholder="作者" id="author" required>
+            <div class="invalid-feedback">
+              作者不能为空！
+            </div>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>目的地</label>
+            <input type="text" name="place" class="form-control" placeholder="目的地" id="place" required>
+            <div class="invalid-feedback">
+              目的地不能为空！
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>基本花费</label>
+            <input type="text" name="price" class="form-control" placeholder="基本花费" id="price" >
+
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls" style="border-bottom-width: 0" >
+            <label>内容</label>
+            <!--<textarea rows="8" type="text" name="content" class="form-control" placeholder="内容" id="content" ></textarea>-->
+            <div id="editor" >
+              <!--              <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>-->
+            </div>
+            <textarea id="content" name="content" style="display: none " ></textarea>
+            <div class="invalid-feedback">
+              文章内容不能为空！
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="sendMessageButton"   >发 表</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="copyright text-muted">Copyright &copy;  2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js/wangEditor.min.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/clean-blog.min.js"></script>
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply Bootstrap validation styles to
+      var form = document.getElementById("registerForm");
+      // Loop over them and prevent submission
+
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+
+    }, false);
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    var $text1 = $('#content')
+    editor.config.onchange = function (html) {
+      // 第二步，监控变化，同步更新到 textarea
+      $text1.val(html)
+    }
+    editor.create()
+
+    // 第一步，初始化 textarea 的值
+    $content.val(editor.txt.html())
+  })();
+</script>
+
+
+
+</body>
+
+</html>
